@@ -1,0 +1,9 @@
+﻿using Xunit;
+
+namespace ExamDAOnAbp.LearningOutcomeService.EntityFrameworkCore;
+
+[CollectionDefinition(LearningOutcomeServiceTestConsts.CollectionDefinitionName)]
+public class LearningOutcomeServiceEntityFrameworkCoreCollection : ICollectionFixture<LearningOutcomeServiceEntityFrameworkCoreFixture>
+{
+
+}

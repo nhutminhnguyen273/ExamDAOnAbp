@@ -1,0 +1,9 @@
+﻿using Xunit;
+
+namespace ExamDAOnAbp.AdministrationService.EntityFrameworkCore;
+
+[CollectionDefinition(AdministrationServiceTestConsts.CollectionDefinitionName)]
+public class AdministrationServiceEntityFrameworkCoreCollection : ICollectionFixture<AdministrationServiceEntityFrameworkCoreFixture>
+{
+
+}

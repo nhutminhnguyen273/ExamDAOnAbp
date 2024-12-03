@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ExamDAOnAbp.ExamService</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <UserSecretsId>ExamDAOnAbp.ExamService-4681b4fd-151f-4221-84a4-929d86723e4c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\aspire\ExamDAOnAbp.ServiceDefaults\ExamDAOnAbp.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\ExamDAOnAbp.Shared.Hosting.Microservices\ExamDAOnAbp.Shared.Hosting.Microservices.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.ExamService.Application\ExamDAOnAbp.ExamService.Application.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.ExamService.EntityFrameworkCore\ExamDAOnAbp.ExamService.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.ExamService.HttpApi\ExamDAOnAbp.ExamService.HttpApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+</Project>

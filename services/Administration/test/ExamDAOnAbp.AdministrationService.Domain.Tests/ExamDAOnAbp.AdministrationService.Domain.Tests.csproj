@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ExamDAOnAbp.AdministrationService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ExamDAOnAbp.AdministrationService.Domain\ExamDAOnAbp.AdministrationService.Domain.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.AdministrationService.TestBase\ExamDAOnAbp.AdministrationService.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

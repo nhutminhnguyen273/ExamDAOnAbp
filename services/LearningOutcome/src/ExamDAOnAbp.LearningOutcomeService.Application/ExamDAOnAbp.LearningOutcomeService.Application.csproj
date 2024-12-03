@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ExamDAOnAbp.LearningOutcomeService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.5.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Course\src\ExamDAOnAbp.CourseService.Application.Contracts\ExamDAOnAbp.CourseService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.LearningOutcomeService.Domain\ExamDAOnAbp.LearningOutcomeService.Domain.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.LearningOutcomeService.Application.Contracts\ExamDAOnAbp.LearningOutcomeService.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

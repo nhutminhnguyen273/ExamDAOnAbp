@@ -1,0 +1,188 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "AbpApi": {
+        "ClusterId": "Administration",
+        "Match": {
+          "Path": "/api/abp/{**catch-all}"
+        }
+      },
+      "ExamDAOnAbpLocalization": {
+        "ClusterId": "Administration",
+        "Match": {
+          "Path": "/api/abp/application-localization"
+        }
+      },
+      "ExamDAOnAbpApplicationConfiguration": {
+        "ClusterId": "Administration",
+        "Match": {
+          "Path": "/api/abp/application-configuration"
+        }
+      },
+      "Identity Service": {
+        "ClusterId": "Identity",
+        "Match": {
+          "Path": "/api/identity/{**everything}"
+        }
+      },
+      "Identity Service Swagger": {
+        "ClusterId": "Identity",
+        "Match": {
+          "Path": "/swagger-json/Identity/swagger/v1/swagger.json"
+        },
+        "Transforms": [
+          { "PathRemovePrefix": "/swagger-json/Identity" }
+        ]
+      },
+      "FeatureManagement": {
+        "ClusterId": "feature-management-cluster",
+        "Match": {
+          "Path": "/api/feature-management/{**everything}"
+        }
+      },
+      "PermissionManagement": {
+        "ClusterId": "permission-management-cluster",
+        "Match": {
+          "Path": "/api/permission-management/{**everything}"
+        }
+      },
+      "SettingManagement": {
+        "ClusterId": "setting-management-cluster",
+        "Match": {
+          "Path": "/api/setting-management/{**everything}"
+        }
+      },
+      "Administration Service Swagger": {
+        "ClusterId": "Administration",
+        "Match": {
+          "Path": "/swagger-json/Administration/swagger/v1/swagger.json"
+        },
+        "Transforms": [
+          { "PathRemovePrefix": "/swagger-json/Administration" }
+        ]
+      },
+      "Learning Outcome Service": {
+        "ClusterId": "LearningOutcome",
+        "Match": {
+          "Path": "/api/learning-outcome/{**everything}"
+        }
+      },
+      "Learning Outcome Service Swagger": {
+        "ClusterId": "LearningOutcome",
+        "Match": {
+          "Path": "/swagger-json/LearningOutcome/swagger/v1/swagger.json"
+        },
+        "Transforms": [
+          { "PathRemovePrefix": "/swagger-json/LearningOutcome" }
+        ]
+      },
+      "Course Service": {
+        "ClusterId": "Course",
+        "Match": {
+          "Path": "/api/course/{**everything}"
+        }
+      },
+      "Course Service Swagger": {
+        "ClusterId": "Course",
+        "Match": {
+          "Path": "/swagger-json/Course/swagger/v1/swagger.json"
+        },
+        "Transforms": [
+          { "PathRemovePrefix": "/swagger-json/Course" }
+        ]
+      },
+      "Question Bank Service": {
+        "ClusterId": "QuestionBank",
+        "Match": {
+          "Path": "/api/question-bank/{**everything}"
+        }
+      },
+      "Question Bank Service Swagger": {
+        "ClusterId": "QuestionBank",
+        "Match": {
+          "Path": "/swagger-json/QuestionBank/swagger/v1/swagger.json"
+        },
+        "Transforms": [
+          { "PathRemovePrefix": "/swagger-json/QuestionBank" }
+        ]
+      },
+      "Exam Service": {
+        "ClusterId": "Exam",
+        "Match": {
+          "Path": "/api/exam/{**everything}"
+        }
+      },
+      "Exam Service Swagger": {
+        "ClusterId": "Exam",
+        "Match": {
+          "Path": "/swagger-json/Exam/swagger/v1/swagger.json"
+        },
+        "Transforms": [
+          { "PathRemovePrefix": "/swagger-json/Exam" }
+        ]
+      }
+    },
+    "Clusters": {
+      "Identity": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://localhost:5003",
+            "MetaData": {
+              "PublicAddress": "https://identity.examdaonabp.dev"
+            }
+          }
+        }
+      },
+      "Administration": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://localhost:5002",
+            "MetaData": {
+              "PublicAddress": "https://administration.examdaonabp.dev"
+            }
+          }
+        }
+      },
+      "LearningOutcome": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://localhost:5004",
+            "MetaData": {
+              "PublicAddress": "https://learning-outcome.examdaonabp.dev"
+            }
+          }
+        }
+      },
+      "Course": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://localhost:5005",
+            "MetaData": {
+              "PublicAddress": "https://course.examdaonabp.dev"
+            }
+          }
+        }
+      },
+      "QuestionBank": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://localhost:5006",
+            "MetaData": {
+              "PublicAddress": "https://question-bank.examdaonabp.dev"
+            }
+          }
+        }
+      },
+      "Exam": {
+        "Destinations": {
+          "destination1": {
+            "Address": "http://localhost:5007",
+            "MetaData": {
+              "PublicAddress": "https://exam.examdaonabp.dev"
+            }
+          }
+        }
+      }
+    }
+  }
+}

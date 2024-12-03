@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>ExamDAOnAbp.IdentityService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExamDAOnAbp.IdentityService.Domain\ExamDAOnAbp.IdentityService.Domain.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.IdentityService.Application.Contracts\ExamDAOnAbp.IdentityService.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Keycloak.Net.Core" Version="1.0.30" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs" Version="9.0.1" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="9.0.1" />
+  </ItemGroup>
+
+</Project>

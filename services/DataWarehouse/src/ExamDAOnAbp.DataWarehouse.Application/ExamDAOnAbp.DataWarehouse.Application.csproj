@@ -9,17 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExamDAOnAbp.DataWarehouse.Domain\ExamDAOnAbp.DataWarehouse.Domain.csproj" />
-    <ProjectReference Include="..\ExamDAOnAbp.DataWarehouse.Application.Contracts\ExamDAOnAbp.DataWarehouse.Application.Contracts.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="8.3.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Account.Application" Version="9.0.1" />
-    <PackageReference Include="Volo.Abp.Identity.Application" Version="9.0.1" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="9.0.1" />
-    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="9.0.1" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="9.0.1" />
-    <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="9.0.1" />
+    <ProjectReference Include="..\..\..\Exam\src\ExamDAOnAbp.ExamService.Application.Contracts\ExamDAOnAbp.ExamService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\QuestionBank\src\ExamDAOnAbp.QuestionBankService.Application.Contracts\ExamDAOnAbp.QuestionBankService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\QuestionBank\src\ExamDAOnAbp.QuestionBankService.Application\ExamDAOnAbp.QuestionBankService.Application.csproj" />
+    <ProjectReference Include="..\..\..\QuestionBank\src\ExamDAOnAbp.QuestionBankService.Domain\ExamDAOnAbp.QuestionBankService.Domain.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.DataWarehouse.Domain\ExamDAOnAbp.DataWarehouse.Domain.csproj" />
+    <ProjectReference Include="..\ExamDAOnAbp.DataWarehouse.Application.Contracts\ExamDAOnAbp.DataWarehouse.Application.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

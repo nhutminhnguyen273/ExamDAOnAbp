@@ -16,12 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\apps\ExamDAOnAbp.Web\ExamDAOnAbp.Web.csproj" />
     <ProjectReference Include="..\..\gateways\ExamDAOnAbp.WebGateway\ExamDAOnAbp.WebGateway.csproj" />
     <ProjectReference Include="..\..\services\Administration\src\ExamDAOnAbp.AdministrationService.HttpApi.Host\ExamDAOnAbp.AdministrationService.HttpApi.Host.csproj" />
     <ProjectReference Include="..\..\services\Course\src\ExamDAOnAbp.CourseService.HttpApi.Host\ExamDAOnAbp.CourseService.HttpApi.Host.csproj" />
     <ProjectReference Include="..\..\services\Exam\src\ExamDAOnAbp.ExamService.HttpApi.Host\ExamDAOnAbp.ExamService.HttpApi.Host.csproj" />
-    <ProjectReference Include="..\..\services\Identity\src\ExamDAOnAbp.IdentityService.HttpApi.Host\ExamDAOnAbp.IdentityService.HttpApi.Host.csproj" />
     <ProjectReference Include="..\..\services\LearningOutcome\src\ExamDAOnAbp.LearningOutcomeService.HttpApi.Host\ExamDAOnAbp.LearningOutcomeService.HttpApi.Host.csproj" />
     <ProjectReference Include="..\..\services\QuestionBank\src\ExamDAOnAbp.QuestionBankService.HttpApi.Host\ExamDAOnAbp.QuestionBankService.HttpApi.Host.csproj" />
     <ProjectReference Include="..\..\shared\ExamDAOnAbp.Keycloak.DbMigrator\ExamDAOnAbp.Keycloak.DbMigrator.csproj" />

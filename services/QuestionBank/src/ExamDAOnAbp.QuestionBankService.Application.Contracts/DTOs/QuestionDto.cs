@@ -10,5 +10,7 @@ namespace ExamDAOnAbp.QuestionBankService.DTOs
         public string Content { get; set; }
         public Guid ChapterId { get; set; }
         public string CLO { get; set; }
+        public string DifficultyLevel { get; set; }
+        public bool Deleted { get; set; }
     }
 }

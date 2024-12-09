@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -68,7 +69,7 @@ namespace ExamDAOnAbp.ExamService.AppServices.StudentAppServices
                         {
                             Code = code,
                             FullName = fullName,
-                            DateOfBirth = DateTime.Parse(dateOfBirth),
+                            DateOfBirth = DateTime.ParseExact(dateOfBirth, "d/M/yyyy", CultureInfo.InvariantCulture),
                             Gender = gender.Value,
                             Email = email,
                             Phone = phone,

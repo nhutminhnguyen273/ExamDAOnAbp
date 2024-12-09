@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="**\*generate-proxy.json" />
-    <Content Remove="**\*generate-proxy.json" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
+    <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="8.3.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NETStandard.Library" Version="2.0.3" />
-    <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="9.0.1" />
+    <EmbeddedResource Include="**\*generate-proxy.json" />
+    <Content Remove="**\*generate-proxy.json" />
   </ItemGroup>
 
 </Project>

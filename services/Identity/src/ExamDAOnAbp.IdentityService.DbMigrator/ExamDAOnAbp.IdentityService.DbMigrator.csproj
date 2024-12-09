@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Autofac" Version="9.0.0" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="9.0.1" />
     <ProjectReference Include="..\ExamDAOnAbp.IdentityService.Application.Contracts\ExamDAOnAbp.IdentityService.Application.Contracts.csproj" />
     <ProjectReference Include="..\ExamDAOnAbp.IdentityService.EntityFrameworkCore\ExamDAOnAbp.IdentityService.EntityFrameworkCore.csproj" />
   </ItemGroup>

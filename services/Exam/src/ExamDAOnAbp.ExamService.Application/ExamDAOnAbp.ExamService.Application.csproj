@@ -10,13 +10,15 @@
 
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="7.5.1" />
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="9.0.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="8.3.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Course\src\ExamDAOnAbp.CourseService.Application.Contracts\ExamDAOnAbp.CourseService.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\QuestionBank\src\ExamDAOnAbp.QuestionBankService.Application.Contracts\ExamDAOnAbp.QuestionBankService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\QuestionBank\src\ExamDAOnAbp.QuestionBankService.Domain\ExamDAOnAbp.QuestionBankService.Domain.csproj" />
     <ProjectReference Include="..\ExamDAOnAbp.ExamService.Domain\ExamDAOnAbp.ExamService.Domain.csproj" />
     <ProjectReference Include="..\ExamDAOnAbp.ExamService.Application.Contracts\ExamDAOnAbp.ExamService.Application.Contracts.csproj" />
   </ItemGroup>

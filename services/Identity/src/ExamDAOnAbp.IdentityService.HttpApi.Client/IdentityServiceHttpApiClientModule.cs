@@ -11,11 +11,18 @@ namespace ExamDAOnAbp.IdentityService;
 )]
 public class IdentityServiceHttpApiClientModule : AbpModule
 {
+    public const string RemoteServiceName = "IdentityService";
+
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         context.Services.AddHttpClientProxies(
             typeof(IdentityServiceApplicationContractsModule).Assembly,
-            IdentityServiceRemoteServiceConsts.RemoteServiceName
+            RemoteServiceName
         );
+
+        Configure<AbpVirtualFileSystemOptions>(options =>
+        {
+            options.FileSets.AddEmbedded<IdentityServiceHttpApiClientModule>();
+        });
     }
 }

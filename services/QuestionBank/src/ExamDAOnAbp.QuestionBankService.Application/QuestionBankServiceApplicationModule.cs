@@ -1,4 +1,5 @@
 ﻿using ExamDAOnAbp.CourseService.HttpClients.Chapters;
+using ExamDAOnAbp.DataWarehouse.HttpClients;
 using ExamDAOnAbp.QuestionBankService.AppServices.AnswerAppServices;
 using ExamDAOnAbp.QuestionBankService.AppServices.QuestionAppServices;
 using ExamDAOnAbp.QuestionBankService.Interfaces.AnswerAppServices;
@@ -40,6 +41,11 @@ public class QuestionBankServiceApplicationModule : AbpModule
         context.Services.AddHttpClient<ChapterClientService>(client =>
         {
             client.BaseAddress = new Uri("http://localhost:5005");
+        });
+
+        context.Services.AddHttpClient<DataWarehouseClientService>(client =>
+        {
+            client.BaseAddress = new Uri("http://localhost:5008");
         });
 
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;

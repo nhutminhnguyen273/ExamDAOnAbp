@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="9.0.1" />
+    <ProjectReference Include="..\ExamDAOnAbp.IdentityService.Application.Contracts\ExamDAOnAbp.IdentityService.Application.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExamDAOnAbp.IdentityService.Application.Contracts\ExamDAOnAbp.IdentityService.Application.Contracts.csproj" />
+    <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="8.3.3" />
   </ItemGroup>
 
 </Project>

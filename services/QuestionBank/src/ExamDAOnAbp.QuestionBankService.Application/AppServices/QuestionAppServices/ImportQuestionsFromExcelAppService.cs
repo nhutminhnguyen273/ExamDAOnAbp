@@ -46,6 +46,7 @@ namespace ExamDAOnAbp.QuestionBankService.AppServices.QuestionAppServices
                         var content = worksheet.Cells[row, 2].Text;
                         var chapterName = worksheet.Cells[row, 3].Text;
                         var clo = worksheet.Cells[row, 4].Text;
+                        var difficultyLevel = worksheet.Cells[row, 5].Text;
                         if (string.IsNullOrWhiteSpace(type) || string.IsNullOrWhiteSpace(content) || string.IsNullOrWhiteSpace(chapterName) || string.IsNullOrWhiteSpace(clo))
                         {
                             continue;
@@ -61,6 +62,7 @@ namespace ExamDAOnAbp.QuestionBankService.AppServices.QuestionAppServices
                             Content = content,
                             ChapterId = chapter.Id,
                             CLO = clo,
+                            DifficultyLevel = difficultyLevel
                         };
                         importedQuestions.Add(question);
                     }

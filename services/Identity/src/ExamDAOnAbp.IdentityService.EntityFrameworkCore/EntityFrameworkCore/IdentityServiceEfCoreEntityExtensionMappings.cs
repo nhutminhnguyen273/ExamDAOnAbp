@@ -8,8 +8,6 @@ public static class IdentityServiceEfCoreEntityExtensionMappings
 
     public static void Configure()
     {
-        IdentityServiceModuleExtensionConfigurator.Configure();
-
         OneTimeRunner.Run(() =>
         {
                 /* You can configure extra properties for the

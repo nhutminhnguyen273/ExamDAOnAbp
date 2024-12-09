@@ -18,16 +18,14 @@ namespace ExamDAOnAbp.ExamService.AppServices.ExamResultAppServices
     public class ImportExamResultsFromExcelAppService : ApplicationService, IImportExamResultsFromExcelAppService
     {
         private readonly IRepository<ExamResult, Guid> _examResultRepository;
-        private readonly IRepository<Exam, Guid> _examRepository;
         private readonly IRepository<ExamPaper, Guid> _examPaperRepository;
         private readonly IRepository<Student, Guid> _studentRepository;
         private readonly QuestionClientService _questionService;
 
-        public ImportExamResultsFromExcelAppService(IRepository<ExamResult, Guid> examResultRepository, IRepository<Exam, Guid> examRepository,
+        public ImportExamResultsFromExcelAppService(IRepository<ExamResult, Guid> examResultRepository,
             IRepository<ExamPaper, Guid> examPaperRepository, IRepository<Student, Guid> studentRepository, QuestionClientService questionService)
         {
             _examResultRepository = examResultRepository;
-            _examRepository = examRepository;
             _examPaperRepository = examPaperRepository;
             _studentRepository = studentRepository;
             _questionService = questionService;
@@ -50,12 +48,12 @@ namespace ExamDAOnAbp.ExamService.AppServices.ExamResultAppServices
                     for (int row = 2; row <=  rowCount; row++)
                     {
                         var studentCode = worksheet.Cells[row, 1].Text;
-                        var examDate = worksheet.Cells[row, 2].Text;
+                        var exam = worksheet.Cells[row, 2].Text;
                         var examPaperCode = worksheet.Cells[row, 3].Text;
                         var questionContent = worksheet.Cells[row, 4].Text;
                         var isCorrect = worksheet.Cells[row, 5].Text;
                         var score = worksheet.Cells[row, 6].Text;
-                        if (string.IsNullOrWhiteSpace(studentCode) || string.IsNullOrWhiteSpace(examDate) || string.IsNullOrWhiteSpace(examPaperCode)
+                        if (string.IsNullOrWhiteSpace(studentCode) || string.IsNullOrWhiteSpace(exam) || string.IsNullOrWhiteSpace(examPaperCode)
                             || string.IsNullOrWhiteSpace(questionContent) || string.IsNullOrWhiteSpace(isCorrect) || string.IsNullOrWhiteSpace(score))
                         {
                             continue;
@@ -65,27 +63,22 @@ namespace ExamDAOnAbp.ExamService.AppServices.ExamResultAppServices
                         {
                             continue;
                         }
-                        var exam = await _examRepository.FirstOrDefaultAsync(e => e.Date == DateTime.Parse(examDate));
-                        if (exam == null)
-                        {
-                            continue;
-                        }
                         var examPaper = await _examPaperRepository.FirstOrDefaultAsync(e => e.Code == examPaperCode);
                         if (examPaper == null)
                         {
                             continue;
                         }
-                        var question = await _questionService.FindQuestionByName(questionContent);
-                        if (question == null)
-                        {
-                            continue;
-                        }
+                        //var question = await _questionService.FindQuestionByName(questionContent);
+                        //if (question == null)
+                        //{
+                        //    continue;
+                        //}
                         var examResult = new ExamResult
                         {
                             StudentId = student.Id,
-                            ExamId = exam.Id,
+                            ExamId = Guid.Parse(exam),
                             ExamPaperId = examPaper.Id,
-                            QuestionId = question.Id,
+                            QuestionId = Guid.Parse(questionContent),
                             IsCorrect = bool.Parse(isCorrect),
                             Score = float.Parse(score),
                         };

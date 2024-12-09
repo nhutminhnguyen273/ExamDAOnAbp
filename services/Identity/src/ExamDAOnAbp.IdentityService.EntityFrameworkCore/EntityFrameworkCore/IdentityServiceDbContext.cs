@@ -1,11 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
 
 namespace ExamDAOnAbp.IdentityService.EntityFrameworkCore;
 
+[ReplaceDbContext(typeof(IIdentityDbContext))]
 [ConnectionStringName(IdentityServiceDbProperties.ConnectionStringName)]
 public class IdentityServiceDbContext :
     AbpDbContext<IdentityServiceDbContext>,

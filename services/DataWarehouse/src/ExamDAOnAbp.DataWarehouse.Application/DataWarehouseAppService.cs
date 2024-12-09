@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ExamDAOnAbp.DataWarehouse.Localization;
+﻿using ExamDAOnAbp.DataWarehouse.Localization;
 using Volo.Abp.Application.Services;
 
 namespace ExamDAOnAbp.DataWarehouse;

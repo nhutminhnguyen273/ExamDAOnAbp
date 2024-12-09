@@ -1,6 +1,7 @@
 ﻿using ExamDAOnAbp.IdentityService.Localization;
 using Volo.Abp.Identity;
 using Volo.Abp.Localization;
+using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Modularity;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
@@ -8,15 +9,10 @@ using Volo.Abp.VirtualFileSystem;
 namespace ExamDAOnAbp.IdentityService;
 
 [DependsOn(
-    typeof(AbpIdentityDomainSharedModule)   
+    typeof(AbpIdentityDomainSharedModule)
     )]
 public class IdentityServiceDomainSharedModule : AbpModule
 {
-    public override void PreConfigureServices(ServiceConfigurationContext context)
-    {
-        IdentityServiceModuleExtensionConfigurator.Configure();
-    }
-
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         Configure<AbpVirtualFileSystemOptions>(options =>
@@ -32,6 +28,11 @@ public class IdentityServiceDomainSharedModule : AbpModule
                 .AddVirtualJson("/Localization/IdentityService");
 
             options.DefaultResourceType = typeof(IdentityServiceResource);
+        });
+
+        Configure<AbpExceptionLocalizationOptions>(options =>
+        {
+            options.MapCodeNamespace("IdentityService", typeof(IdentityServiceResource));
         });
     }
 }

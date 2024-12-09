@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamDAOnAbp.QuestionBankService.Controllers.AnswerControllers
 {
-    [Route("api/answers/list")]
+    [Route("api/answers")]
     [ApiController]
     public class GetListAnswersController : ControllerBase
     {

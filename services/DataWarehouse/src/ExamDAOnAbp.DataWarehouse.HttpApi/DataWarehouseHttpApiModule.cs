@@ -1,24 +1,14 @@
 ﻿using Localization.Resources.AbpUi;
 using ExamDAOnAbp.DataWarehouse.Localization;
-using Volo.Abp.Account;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.Identity;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
-using Volo.Abp.PermissionManagement.HttpApi;
-using Volo.Abp.SettingManagement;
-using Volo.Abp.TenantManagement;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace ExamDAOnAbp.DataWarehouse;
 
 [DependsOn(
     typeof(DataWarehouseApplicationContractsModule),
-    typeof(AbpAccountHttpApiModule),
-    typeof(AbpIdentityHttpApiModule),
-    typeof(AbpPermissionManagementHttpApiModule),
-    typeof(AbpTenantManagementHttpApiModule),
-    typeof(AbpFeatureManagementHttpApiModule),
-    typeof(AbpSettingManagementHttpApiModule)
+    typeof(AbpAspNetCoreMvcModule)
     )]
 public class DataWarehouseHttpApiModule : AbpModule
 {

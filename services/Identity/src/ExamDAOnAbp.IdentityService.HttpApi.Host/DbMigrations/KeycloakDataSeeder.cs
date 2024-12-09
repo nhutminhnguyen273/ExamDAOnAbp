@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ExamDAOnAbp.IdentityService.Keycloak.Service;
+using ExamDAOnAbp.DbMigrator;
 using Keycloak.Net;
 using Keycloak.Net.Models.Clients;
 using Keycloak.Net.Models.ClientScopes;
@@ -90,6 +90,7 @@ public class KeyCloakDataSeeder : IDataSeedContributor, ITransientDependency
     //    await CreateScopeAsync("CourseService");
     //    await CreateScopeAsync("QuestionBankService");
     //    await CreateScopeAsync("ExamService");
+    //    await CreateScopeAsync("DataWarehouse");
     //}
 
     //private async Task CreateScopeAsync(string scopeName)
@@ -227,7 +228,8 @@ public class KeyCloakDataSeeder : IDataSeedContributor, ITransientDependency
     //            {
     //                "AdministrationService", "IdentityService",
     //                "LearningOutcomeService", "CourseService",
-    //                "QuestionBankService", "ExamService"
+    //                "QuestionBankService", "ExamService",
+    //                "DataWarehouse"
     //            }
     //        );
     //    }
@@ -250,6 +252,7 @@ public class KeyCloakDataSeeder : IDataSeedContributor, ITransientDependency
     //        var courseServiceRootUrl = _configuration[$"Clients:CourseService:RootUrl"].TrimEnd('/');
     //        var questionBankServiceRootUrl = _configuration[$"Clients:QuestionBankService:RootUrl"].TrimEnd('/');
     //        var examServiceRootUrl = _configuration[$"Clients:ExamService:RootUrl"].TrimEnd('/');
+    //        var dataWarehouseRootUrl = _configuration[$"Clients:DataWarehouse:RootUrl"].TrimEnd('/');
 
     //        swaggerClient = new Client
     //        {
@@ -268,6 +271,7 @@ public class KeyCloakDataSeeder : IDataSeedContributor, ITransientDependency
     //                $"{courseServiceRootUrl}/swagger/oauth2-redirect.html",
     //                $"{questionBankServiceRootUrl}/swagger/oauth2-redirect.html",
     //                $"{examServiceRootUrl}/swagger/oauth2-redirect.html",
+    //                $"{dataWarehouseRootUrl}/swagger/oauth2-redirect.html"
     //            },
     //            FrontChannelLogout = true,
     //            PublicClient = true
@@ -281,7 +285,8 @@ public class KeyCloakDataSeeder : IDataSeedContributor, ITransientDependency
     //            {
     //                "AdministrationService", "IdentityService",
     //                "LearningOutcomeService", "CourseService",
-    //                "QuestionBankService", "ExamService"
+    //                "QuestionBankService", "ExamService",
+    //                "DataWarehouse"
     //            }
     //        );
     //    }
@@ -323,7 +328,8 @@ public class KeyCloakDataSeeder : IDataSeedContributor, ITransientDependency
     //            {
     //                "AdministrationService", "IdentityService",
     //                "LearningOutcomeService", "CourseService",
-    //                "QuestionBankService", "ExamService"
+    //                "QuestionBankService", "ExamService",
+    //                "DataWarehouse"
     //            }
     //        );
     //    }

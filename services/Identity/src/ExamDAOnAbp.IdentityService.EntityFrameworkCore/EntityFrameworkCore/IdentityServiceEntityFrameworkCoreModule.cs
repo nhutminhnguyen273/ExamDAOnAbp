@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -8,8 +7,7 @@ namespace ExamDAOnAbp.IdentityService.EntityFrameworkCore;
 
 [DependsOn(
     typeof(IdentityServiceDomainModule),
-    typeof(AbpIdentityEntityFrameworkCoreModule),
-    typeof(AbpEntityFrameworkCoreSqlServerModule)
+    typeof(AbpIdentityEntityFrameworkCoreModule)
     )]
 public class IdentityServiceEntityFrameworkCoreModule : AbpModule
 {
@@ -22,8 +20,6 @@ public class IdentityServiceEntityFrameworkCoreModule : AbpModule
     {
         context.Services.AddAbpDbContext<IdentityServiceDbContext>(options =>
         {
-            options.ReplaceDbContext<IIdentityDbContext>();
-
             options.AddDefaultRepositories(includeAllEntities: true);
         });
 

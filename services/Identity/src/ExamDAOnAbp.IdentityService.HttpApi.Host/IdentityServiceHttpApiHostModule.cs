@@ -10,10 +10,10 @@ using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Modularity;
 using ExamDAOnAbp.Shared.Hosting.Microservices;
-using ExamDAOnAbp.IdentityService.DbMigrations;
 using ExamDAOnAbp.Shared.Hosting.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using ExamDAOnAbp.IdentityService.DbMigrations;
 
 namespace ExamDAOnAbp.IdentityService;
 
@@ -58,7 +58,7 @@ public class IdentityServiceHttpApiHostModule : AbpModule
             });
         });
 
-        // Keycloak x? lý vi?c t?o ng??i dùng mà tên ng??i dùng có th? là nhi?u t?
+        // Keycloak handles the user creation that a user name can be multiple words
         Configure<IdentityOptions>(options =>
         {
             options.User.AllowedUserNameCharacters = null;

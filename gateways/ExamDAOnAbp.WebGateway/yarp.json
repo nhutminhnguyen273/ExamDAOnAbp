@@ -126,60 +126,60 @@
       "Identity": {
         "Destinations": {
           "destination1": {
-            "Address": "http://localhost:5003",
-            "MetaData": {
-              "PublicAddress": "http://localhost:5003"
-            }
+            "Address": "http://localhost:5003"
+            //"MetaData": {
+            //  "PublicAddress": "http://localhost:5003"
+            //}
           }
         }
       },
       "Administration": {
         "Destinations": {
           "destination1": {
-            "Address": "http://localhost:5002",
-            "MetaData": {
-              "PublicAddress": "http://localhost:5002"
-            }
+            "Address": "http://localhost:5002"
+            //"MetaData": {
+            //  "PublicAddress": "http://localhost:5002"
+            //}
           }
         }
       },
       "LearningOutcome": {
         "Destinations": {
           "destination1": {
-            "Address": "http://localhost:5004",
-            "MetaData": {
-              "PublicAddress": "http://localhost:5004"
-            }
+            "Address": "http://localhost:5004"
+            //"MetaData": {
+            //  "PublicAddress": "http://localhost:5004"
+            //}
           }
         }
       },
       "Course": {
         "Destinations": {
           "destination1": {
-            "Address": "http://localhost:5005",
-            "MetaData": {
-              "PublicAddress": "http://localhost:5005"
-            }
+            "Address": "http://localhost:5005"
+            //"MetaData": {
+            //  "PublicAddress": "http://localhost:5005"
+            //}
           }
         }
       },
       "QuestionBank": {
         "Destinations": {
           "destination1": {
-            "Address": "http://localhost:5006",
-            "MetaData": {
-              "PublicAddress": "http://localhost:5006"
-            }
+            "Address": "http://localhost:5006"
+            //"MetaData": {
+            //  "PublicAddress": "http://localhost:5006"
+            //}
           }
         }
       },
       "Exam": {
         "Destinations": {
           "destination1": {
-            "Address": "http://localhost:5007",
-            "MetaData": {
-              "PublicAddress": "http://localhost:5007"
-            }
+            "Address": "http://localhost:5007"
+            //"MetaData": {
+            //  "PublicAddress": "http://localhost:5007"
+            //}
           }
         }
       }

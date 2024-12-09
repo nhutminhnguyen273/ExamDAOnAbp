@@ -1,5 +1,7 @@
 ﻿using ExamDAOnAbp.CourseService.HttpClients.Chapters;
 using ExamDAOnAbp.CourseService.HttpClients.Courses;
+using ExamDAOnAbp.ExamService.Interfaces.PSO;
+using ExamDAOnAbp.ExamService.PSO;
 using ExamDAOnAbp.QuestionBankService.HttpClients.Questions;
 using Microsoft.Extensions.DependencyInjection;
 using OfficeOpenXml;

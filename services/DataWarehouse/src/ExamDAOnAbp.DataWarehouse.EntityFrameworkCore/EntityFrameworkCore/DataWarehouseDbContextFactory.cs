@@ -17,7 +17,10 @@ public class DataWarehouseDbContextFactory : IDesignTimeDbContextFactory<DataWar
         var configuration = BuildConfiguration();
 
         var builder = new DbContextOptionsBuilder<DataWarehouseDbContext>()
-            .UseSqlServer(configuration.GetConnectionString("Default"));
+            .UseSqlServer(configuration.GetConnectionString(DataWarehouseDbProperties.ConnectionStringName), b =>
+            {
+                b.MigrationsHistoryTable("__DataWarehouse_Migrations");
+            });
 
         return new DataWarehouseDbContext(builder.Options);
     }
@@ -25,7 +28,7 @@ public class DataWarehouseDbContextFactory : IDesignTimeDbContextFactory<DataWar
     private static IConfigurationRoot BuildConfiguration()
     {
         var builder = new ConfigurationBuilder()
-            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../ExamDAOnAbp.DataWarehouse.DbMigrator/"))
+            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), $"..{Path.DirectorySeparatorChar}ExamDAOnAbp.DataWarehouse.HttpApi.Host"))
             .AddJsonFile("appsettings.json", optional: false);
 
         return builder.Build();

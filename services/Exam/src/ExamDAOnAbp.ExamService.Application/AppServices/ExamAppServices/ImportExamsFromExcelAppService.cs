@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -59,12 +60,14 @@ namespace ExamDAOnAbp.ExamService.AppServices.ExamAppServices
                         {
                             continue;
                         }
+                        var startTimes = DateTime.Parse(startTime);
+                        var endTimes = DateTime.Parse(endTime);
                         var exam = new Exam
                         {
                             Session = session,
-                            Date = DateTime.Parse(date),
-                            StartTime = TimeSpan.Parse(startTime),
-                            EndTime = TimeSpan.Parse(endTime),
+                            Date = DateTime.ParseExact(date, "d/M/yyyy", CultureInfo.InvariantCulture),
+                            StartTime = startTimes.TimeOfDay,
+                            EndTime = endTimes.TimeOfDay,
                             Room = room,
                             CourseId = course.Id,
                             NumberOfStudents = int.Parse(numberOfStudents)

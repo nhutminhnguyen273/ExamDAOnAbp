@@ -7,7 +7,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace ExamDAOnAbp.QuestionBankService.Controllers.QuestionControllers
 {
-    [Route("api/questions/list")]
+    [Route("api/questions")]
     [ApiController]
     public class GetListQuestionsController : ControllerBase
     {

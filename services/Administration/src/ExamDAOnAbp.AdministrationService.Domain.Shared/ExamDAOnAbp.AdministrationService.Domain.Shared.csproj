@@ -11,9 +11,9 @@
 
   <ItemGroup>
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
-    <PackageReference Include="Volo.Abp.AuditLogging.Domain.Shared" Version="9.0.1" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="9.0.1" />
-    <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="9.0.1" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain.Shared" Version="8.3.3" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="8.3.3" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="8.3.3" />
   </ItemGroup>
 
   <ItemGroup>

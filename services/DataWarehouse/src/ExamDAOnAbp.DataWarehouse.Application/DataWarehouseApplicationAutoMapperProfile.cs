@@ -1,4 +1,8 @@
 ﻿using AutoMapper;
+using ExamDAOnAbp.DataWarehouse.DTOs;
+using ExamDAOnAbp.DataWarehouse.Entities;
+using ExamDAOnAbp.ExamService.DTOs;
+using ExamDAOnAbp.QuestionBankService.DTOs;
 
 namespace ExamDAOnAbp.DataWarehouse;
 
@@ -6,8 +10,10 @@ public class DataWarehouseApplicationAutoMapperProfile : Profile
 {
     public DataWarehouseApplicationAutoMapperProfile()
     {
-        /* You can configure your AutoMapper mapping configuration here.
-         * Alternatively, you can split your mapping configurations
-         * into multiple profile classes for a better organization. */
+        CreateMap<ExamResultDto, FactExamResult>();
+        CreateMap<ExamDto, DimExam>();
+        CreateMap<AnswerDto, DimAnswer>();
+        CreateMap<QuestionDto, DimQuestion>();
+        CreateMap<StudentDto, DimStudent>();
     }
 }

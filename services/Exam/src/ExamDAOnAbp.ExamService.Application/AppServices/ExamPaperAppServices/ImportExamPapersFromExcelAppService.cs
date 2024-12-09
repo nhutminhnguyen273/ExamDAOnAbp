@@ -4,10 +4,12 @@ using ExamDAOnAbp.ExamService.Entities;
 using ExamDAOnAbp.ExamService.Interfaces.ExamPaperAppServices;
 using ExamDAOnAbp.QuestionBankService.HttpClients.Questions;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.Application.Dtos;
@@ -48,8 +50,8 @@ namespace ExamDAOnAbp.ExamService.AppServices.ExamPaperAppServices
                         var code = worksheet.Cells[row, 1].Text;
                         var courseName = worksheet.Cells[row, 2].Text;
                         var time = worksheet.Cells[row, 3].Text;
-                        var questionContent = worksheet.Cells[row, 4].Text;
-                        if (string.IsNullOrWhiteSpace(code) || string.IsNullOrWhiteSpace(courseName) || string.IsNullOrWhiteSpace(time) || string.IsNullOrWhiteSpace(questionContent))
+                        var questionContents = worksheet.Cells[row, 4].Text;
+                        if (string.IsNullOrWhiteSpace(code) || string.IsNullOrWhiteSpace(courseName) || string.IsNullOrWhiteSpace(time) || string.IsNullOrWhiteSpace(questionContents))
                         {
                             continue;
                         }
@@ -58,17 +60,18 @@ namespace ExamDAOnAbp.ExamService.AppServices.ExamPaperAppServices
                         {
                             continue;
                         }
-                        var question = await _questionService.FindQuestionByName(questionContent);
-                        if (question == null) 
-                        {
-                            continue;
-                        }
+                        //var question = await _questionService.FindQuestionByName(questionContents);
+                        //if (question == null)
+                        //{
+                        //    continue;
+                        //}
+                        var times = DateTime.Parse(time);
                         var examPaper = new ExamPaper
                         {
                             Code = code,
                             CourseId = course.Id,
-                            Time = TimeSpan.Parse(time),
-                            QuestionId = question.Id,
+                            Time = times.TimeOfDay,
+                            QuestionId = Guid.Parse(questionContents),
                         };
                         importedExamPapers.Add(examPaper);
                     }

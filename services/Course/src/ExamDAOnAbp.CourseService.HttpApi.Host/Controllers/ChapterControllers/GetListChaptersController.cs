@@ -7,7 +7,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace ExamDAOnAbp.CourseService.Controllers.ChapterControllers
 {
-    [Route("api/chapters/list")]
+    [Route("api/chapters")]
     [ApiController]
     public class GetListChaptersController : ControllerBase
     {

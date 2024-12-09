@@ -5,7 +5,7 @@ namespace ExamDAOnAbp.ExamService.DTOs
 {
     public class ExamResultDto : AuditedEntityDto<Guid>
     {
-        public string StudentCode { get; set; }
+        public Guid StudentId { get; set; }
         public Guid ExamId { get; set; }
         public Guid ExamPaperId { get; set; }
         public Guid QuestionId { get; set; }

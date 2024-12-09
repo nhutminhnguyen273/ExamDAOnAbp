@@ -7,7 +7,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace ExamDAOnAbp.ExamService.Controllers.ExamControllers
 {
-    [Route("api/exam/list")]
+    [Route("api/exams")]
     [ApiController]
     public class GetListExamsController : ControllerBase
     {
